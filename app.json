@@ -1,17 +1,45 @@
 {
   "expo": {
-    "name": "worker-temp",
-    "slug": "worker-temp",
+    "name": "Fixxedj Worker",
+    "slug": "fixxedj-worker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Fixxedj Captain to use your camera for face verification.",
+          "microphonePermission": false,
+          "recordAudioAndroid": false
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "Allow Fixxedj Captain to show your live location on the duty map."
+        }
+      ],
+      "expo-audio"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "Allow Fixxedj Captain to use your camera for face verification.",
+        "NSLocationWhenInUseUsageDescription": "Allow Fixxedj Captain to show your live location on the duty map."
+      }
     },
     "android": {
+      "permissions": [
+        "CAMERA",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "VIBRATE",
+        "MODIFY_AUDIO_SETTINGS"
+      ],
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#3A86FF",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
